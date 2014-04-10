@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     nodewebkit: {
       options: {
+        app_name: "BBC Radio 1xtra",
         version: '0.9.2',
         build_dir: './build',
         mac_icns: './icon/icon.icns',
