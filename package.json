@@ -1,6 +1,6 @@
 {
     "name": "bbc-radio-1xtra",
-    "main": "http://www.bbc.co.uk/radio/player/bbc_1xtra",
+    "main": "./index.html",
     "version": "0.0.1",
     "window": {
         "title": "BBC Radio 1xtra",
@@ -8,7 +8,7 @@
         "toolbar": false,
         "frame": true,
         "width": 380,
-        "height": 665,
+        "height": 620,
         "resizable": false,
         "position": "mouse"
     },

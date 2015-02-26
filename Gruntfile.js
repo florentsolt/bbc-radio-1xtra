@@ -13,7 +13,8 @@ module.exports = function(grunt) {
         '!./node_modules/grunt*/**',
         './package.json',
         './README.md',
-        './icon/icon.icns'
+        './icon/icon.icns',
+        './index.html'
       ]
     },
     clean: {

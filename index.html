@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            html, body, iframe {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            iframe {
+                width: 380;
+                height: 665;
+                position: absolute;
+                top: -45px;
+                left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe id="iframe" src="http://www.bbc.co.uk/radio/player/bbc_1xtra">
+        </iframe>
+        <script type="text/javascript">
+            var gui = require('nw.gui');
+            var mb = new gui.Menu({type:"menubar"});
+            if (mb.createMacBuiltin) {
+                mb.createMacBuiltin("Radio.Solt.Biz", {
+                    hideEdit: true,
+                    hideWindow: true
+                });
+                gui.Window.get().menu = mb;
+            }
+
+            var win = gui.Window.get();
+            var iframe = document.getElementById('iframe');
+            gui.App.registerGlobalHotKey(new gui.Shortcut({
+                key : "MediaPlayPause",
+                active : function() {
+                    win.eval(iframe,
+                        "var stop = document.getElementById('stop');" +
+                        "var play = document.getElementById('play');" +
+                        "if (stop.style.display !== 'none') { stop.click(); }" +
+                        "else if (play.style.display !== 'none') { play.click(); };"
+                    );
+                }
+            }));
+
+        </script>
+    </body>
+</html>
